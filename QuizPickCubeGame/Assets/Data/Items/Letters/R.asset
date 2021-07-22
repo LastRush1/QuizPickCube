@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c12c8835670791d499c2dee3738e1b3f, type: 3}
-  m_Name: A
+  m_Name: R
   m_EditorClassIdentifier: 
-  nameItem: A
-  icone: {fileID: 4963718625464178563, guid: 7af4089d268c4ec4d8265ffc7f73d7eb, type: 3}
-  newItem: 1
+  nameItem: R
+  icone: {fileID: -6342808464625005154, guid: 807ca3f4a35586d41bcc7aa65a3eb170, type: 3}

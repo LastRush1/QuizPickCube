@@ -19,6 +19,7 @@ public class ItemSO : ScriptableObject
         get { return icone; }
     }
 
+    [SerializeField]
     bool newItem = true;
 
     public bool NewItem

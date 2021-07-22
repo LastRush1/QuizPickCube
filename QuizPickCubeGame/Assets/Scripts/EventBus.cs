@@ -1,11 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public static class EventBus
+public class EventBus : MonoBehaviour
 {
-    private static Dictionary<Type, List<IGlobalSubscriber>> s_Subscribers
-       = new Dictionary<Type, List<IGlobalSubscriber>>();
+    #region Singleton
 
+    public static EventBus Instance;
 
+    #endregion
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    string rightItem = "";
+
+    public bool PickItem(string itemName)
+    {
+        if (itemName == rightItem)
+        {
+            rightItem = "";
+            StartCoroutine(wait());
+            return true;
+        }
+        return false;
+    }
+
+    public void GetRightItem(string rightItem)
+    {
+        this.rightItem = rightItem;
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(3f);
+        BoardController.Instance.NewRound();
+    }
 }
